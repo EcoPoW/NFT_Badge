@@ -369,14 +369,17 @@ def burn(_tokenId: uint256):
     log Transfer(owner, ZERO_ADDRESS, _tokenId)
 
 ### METADATA ###
+@view
 @external
 def name() -> String[12]:
     return "EcoPoW Badge"
 
+@view
 @external
 def symbol() -> String[4]:
     return "EPOW"
 
+@view
 @external
 def tokenURI(tokenId: uint256) -> String[100]:
-    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/ecopow.json"
+    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/ecopow1.json"
