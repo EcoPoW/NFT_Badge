@@ -382,4 +382,4 @@ def symbol() -> String[4]:
 @view
 @external
 def tokenURI(tokenId: uint256) -> String[100]:
-    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/ecopow1.json"
+    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/ecopow2.json"
