@@ -372,14 +372,14 @@ def burn(_tokenId: uint256):
 @view
 @external
 def name() -> String[12]:
-    return "EcoPoW Badge"
+    return "Kaokao"
 
 @view
 @external
-def symbol() -> String[4]:
-    return "EPOW"
+def symbol() -> String[8]:
+    return "KAO"
 
 @view
 @external
 def tokenURI(tokenId: uint256) -> String[100]:
-    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/ecopow2.json"
+    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/kaokao1.json"
