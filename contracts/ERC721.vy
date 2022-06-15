@@ -16,10 +16,10 @@ interface ERC721Receiver:
             _data: Bytes[1024]
         ) -> bytes32: view
 
-interface ERC721Metadata:
-    def name() -> String[12]: view
-    def symbol() -> String[4]: view
-    def tokenURI(tokenId: uint256) -> String[100]: view
+#interface ERC721Metadata:
+#    def name() -> String[12]: view
+#    def symbol() -> String[4]: view
+#    def tokenURI(tokenId: uint256) -> String[100]: view
 
 
 # @dev Emits when ownership of any NFT changes by any mechanism. This event emits when NFTs are
@@ -80,7 +80,7 @@ ERC165_INTERFACE_ID: constant(bytes32) = 0x0000000000000000000000000000000000000
 
 # @dev ERC165 interface ID of ERC721
 ERC721_INTERFACE_ID: constant(bytes32) = 0x0000000000000000000000000000000000000000000000000000000080ac58cd
-
+ERC721_METADATA_INTERFACE_ID: constant(bytes32) = 0x000000000000000000000000000000000000000000000000000000005b5e139f
 
 @external
 def __init__():
@@ -89,6 +89,7 @@ def __init__():
     """
     self.supportedInterfaces[ERC165_INTERFACE_ID] = True
     self.supportedInterfaces[ERC721_INTERFACE_ID] = True
+    self.supportedInterfaces[ERC721_METADATA_INTERFACE_ID] = True
     self.minter = msg.sender
 
 
@@ -372,14 +373,14 @@ def burn(_tokenId: uint256):
 @view
 @external
 def name() -> String[12]:
-    return "Kaokao"
+    return "EcoPoW"
 
 @view
 @external
 def symbol() -> String[8]:
-    return "KAO"
+    return "EPOW"
 
 @view
 @external
 def tokenURI(tokenId: uint256) -> String[100]:
-    return "https://raw.githubusercontent.com/EcoPoW/NFT_Badge/main/metadata/kaokao1.json"
+    return "https://www.w3connect.org/static/{id}.json"
